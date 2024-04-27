@@ -9,10 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type CountURLRequest struct {
-	Destination string `form:"destination" binding:"required"`
-}
-
 func CountURL(ctx *gin.Context) {
 	id := ctx.Param("id")
 
