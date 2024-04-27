@@ -70,7 +70,7 @@ func (r PaymentRepository) GetPaymentByPaymentType(pType int8) ([]Payment, error
 	for rows.Next() {
 		var p Payment
 		if err := rows.Scan(&p.ID, &p.UserID, &p.PaymentType, &p.Amount,
-			&p.DiscountAmount, &p.Description, &p.SourceID, &p.CreatedAt, &p.UpdatedAt); err != nil {
+			&p.DiscountAmount, &p.SourceID, &p.Description, &p.CreatedAt, &p.UpdatedAt); err != nil {
 			return nil, fmt.Errorf("GetPaymentByPaymentType %q: %v", pType, err)
 		}
 		pList = append(pList, p)

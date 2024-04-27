@@ -11,6 +11,7 @@ type PaymentResponse struct {
 	Amount         int32  `json:"amount"`
 	DiscountAmount int32  `json:"discount_amount"`
 	Description    string `json:"description"`
+	SourceID       string `json:"source_id"`
 	CreatedAt      string `json:"created_at"`
 	UpdatedAt      string `json:"updated_at"`
 }
@@ -25,6 +26,7 @@ func ConstructResponseList(list []entity.Payment) []PaymentResponse {
 			Amount:         value.Amount,
 			DiscountAmount: value.DiscountAmount,
 			Description:    value.Description,
+			SourceID:       value.SourceID,
 			CreatedAt:      time.Unix(value.CreatedAt, 0).Format("2006-01-02 15:04:05"),
 			UpdatedAt:      time.Unix(value.UpdatedAt, 0).Format("2006-01-02 15:04:05"),
 		}
